@@ -1,0 +1,45 @@
+.feedback-card
+    width: 80%
+    background: rgba($color-white, 0.8)
+    box-shadow: $box-shadow 
+    margin: 0 auto
+    padding: 6rem
+    transform: skewX(-25deg)
+    // отменяем свойство skew у дочерних элементов
+    & > *
+        transform: skew(25deg)
+    &__img
+        width: 16rem
+        height: 16rem
+        background: #823c3c
+        float: left
+        border-radius: 100%
+        shape-outside: circle(50% at 50% 50%)
+        -webkit-shape-ourside: circle(50% at 50% 50%)
+        margin-right: 4rem
+        overflow: hidden
+        position: relative
+        img
+            height: 100%
+            transform: scale(1.2)
+            transition: all 0.5s
+    &__name
+        text-align: center
+        font-size: 2.4rem
+        font-weight: 400
+        line-height: 2.9rem
+        letter-spacing: .2rem
+        color: $color-white
+        transition: all 0.5s
+        // трюк с центрированием
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -20%)
+        opacity: 0
+    &:hover &__name
+        transform: translate(-50%, -50%)
+        opacity: 1
+    &:hover img
+        transform: scale(1)
+        filter: blur(.3rem) brightness(70%)

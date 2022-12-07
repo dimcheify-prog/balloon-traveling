@@ -1,0 +1,26 @@
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+    @include response(tab-land)
+    // равно 9px
+        font-size: 56.25%
+    @include response(tab-port)
+        font-size: 50%
+    @include response(phone)
+        font-size: 30%
+    @include response(big-screen)
+        font-size: 75%
+    
+
+body
+    padding: 5rem
+    // background-color: $color-white
+
+.container
+    background-color: #F7F7F7
+    position: relative
+    z-index: 0

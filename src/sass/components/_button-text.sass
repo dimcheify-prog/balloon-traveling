@@ -1,0 +1,19 @@
+.btn-text
+    &:link,  &:visited
+        // ссылка по-умолчанию строчная, нужно поменять для того, чтобы применить transform
+        display: inline-block
+        font-weight: 700
+        font-size: $font-size-paragraph
+        letter-spacing: .2rem 
+        color: $color-grey 
+        text-decoration: none
+        padding: 1rem
+        border-bottom: 1px $color-brown-light solid
+        transition: all .5s
+    &:hover
+        background-color: $color-brown-light
+        color:  $color-white
+        box-shadow: $box-shadow
+        transform: translateY(-.5rem)
+    &:active
+        transform: translateY(0rem)

@@ -1,0 +1,54 @@
+
+
+
+//  Основная кнопка сайта
+.btn
+    // Кнопка была тегом a и свойства не применились к тегу button, чтобы применились нужно поставить &, рядом ПК link и visited
+    &, &:link, &:visited
+        @include link-style($color-grey)
+        font-size: 2rem
+        padding: 1.5rem 4rem
+        background: $color-white
+        border-radius: 5rem 
+        transition: all .2s
+        position: relative
+        border: none
+        @include response(tab-land)
+            font-size: 1.8rem
+            padding: 1rem 3rem
+    &:hover
+        transform: translateY(-.4rem)
+        box-shadow: $box-shadow
+        &::after
+            opacity: 0
+            transform: scaleX(1.5) scaleY(1.7)
+    &:active
+        transform: translateY(-.2rem)
+        box-shadow: $box-shadow
+    &::after
+        content: ""
+        background: $color-white
+        width: 100%
+        height: 100%
+        border-radius: 5rem 
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all 1s
+    &_animated
+        animation-name: popUp
+        animation-duration: 0.5s
+        animation-delay: 0.5s
+        animation-timing-function: ease-out
+        backface-visibility: hidden
+        animation-fill-mode: backwards
+
+.btn_brown
+    &, &:link, &:visited
+        background: $color-brown-dark
+        color: $color-white
+        // &:hover
+        &::after
+            background: $color-brown-dark
